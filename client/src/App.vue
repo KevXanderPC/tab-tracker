@@ -1,12 +1,31 @@
-<template>
+<!-- <template>
   <div id="app">
+    <page-header />
     <router-view/>
   </div>
+</template> -->
+<template>
+  <div id="app">
+    <v-app>
+      <v-app-bar  app>
+        <page-header />
+      </v-app-bar>
+      <v-main>
+        <v-container fluid>
+          <router-view/>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
 </template>
-
 <script>
+import PageHeader from '@/components/Header.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    PageHeader
+  }
 }
 </script>
 
@@ -18,5 +37,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.input-group--text-fiel input{
+  border-bottom: 1px solid black;
+}
+.danger-alert{
+  color: red;
 }
 </style>
